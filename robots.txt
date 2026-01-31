@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://triol-foundry.ru/sitemap.xml
+
+# Disallow admin and private areas if any
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Allow important files
+Allow: /index.html
+Allow: /style.css
+Allow: /AVA.jpg
+Allow: /script.js
+
+# Crawl-delay
+Crawl-delay: 1
