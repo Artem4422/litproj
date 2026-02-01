@@ -240,9 +240,43 @@ if (contactForm) {
     });
 }
 
+// Load services for order form
+async function loadServices() {
+    const serviceSelect = document.getElementById('serviceTypeSelect');
+    if (!serviceSelect) return;
+    
+    try {
+        const response = await fetch('/api/services.php');
+        if (!response.ok) {
+            throw new Error('Failed to load services');
+        }
+        const services = await response.json();
+        
+        serviceSelect.innerHTML = '<option value="">Выберите услугу</option>';
+        
+        if (services.length === 0) {
+            serviceSelect.innerHTML = '<option value="">Услуги не найдены</option>';
+            return;
+        }
+        
+        services.forEach(service => {
+            const option = document.createElement('option');
+            option.value = service.id;
+            option.textContent = service.name;
+            serviceSelect.appendChild(option);
+        });
+    } catch (error) {
+        console.error('Error loading services:', error);
+        serviceSelect.innerHTML = '<option value="">Ошибка загрузки услуг</option>';
+    }
+}
+
 // Order form submission with validation
 const orderForm = document.querySelector('.order-form');
 if (orderForm) {
+    // Load services when form is ready
+    loadServices();
+    
     orderForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
@@ -301,18 +335,47 @@ if (orderForm) {
         try {
             // Get form data
             const formData = new FormData(orderForm);
-            const data = Object.fromEntries(formData);
+            const data = {
+                service_type: parseInt(formData.get('service_type')),
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                email: formData.get('email'),
+                description: formData.get('description'),
+                deadline: formData.get('deadline') || ''
+            };
             
-            // Here you would normally send the data to a server
-            console.log('Order form submitted:', data);
+            // Send to server
+            console.log('Sending order data:', data);
             
-            // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            const response = await fetch('/api/submit_order.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
             
-            showSuccessMessage('Спасибо! Ваш заказ принят. Мы свяжемся с вами в ближайшее время.');
+            console.log('Response status:', response.status);
             
-            // Reset form
-            orderForm.reset();
+            if (!response.ok) {
+                const errorText = await response.text();
+                console.error('Server error:', errorText);
+                throw new Error('Ошибка сервера: ' + response.status);
+            }
+            
+            const result = await response.json();
+            console.log('Response data:', result);
+            
+            if (result.success) {
+                showSuccessMessage('Спасибо! Ваш заказ принят. Мы свяжемся с вами в ближайшее время.');
+                // Reset form
+                orderForm.reset();
+                // Reload services
+                loadServices();
+            } else {
+                const errorMsg = result.errors ? result.errors.join(', ') : (result.error || 'Произошла ошибка при отправке заказа');
+                showErrorMessage(errorMsg);
+            }
         } catch (error) {
             console.error('Error submitting order form:', error);
             showErrorMessage('Произошла ошибка при отправке заказа. Попробуйте позже.');
@@ -600,16 +663,31 @@ function openProductModal(productCard) {
     const productName = productCard.dataset.productName;
     const productPrice = productCard.dataset.productPrice;
     const productDescription = productCard.dataset.productDescription;
+    const productImage = productCard.dataset.productImage || '';
     
     currentProductId = productId;
     
     const modalName = document.getElementById('modalProductName');
     const modalPrice = document.getElementById('modalProductPrice');
     const modalDescription = document.getElementById('modalProductDescription');
+    const modalImage = document.getElementById('modalProductImage');
+    const modalImagePlaceholder = document.getElementById('modalProductImagePlaceholder');
     
     if (modalName) modalName.textContent = productName;
     if (modalPrice) modalPrice.textContent = `от ${parseInt(productPrice).toLocaleString('ru-RU')} ₽`;
     if (modalDescription) modalDescription.textContent = productDescription;
+    
+    if (modalImage && modalImagePlaceholder) {
+        if (productImage && productImage.trim()) {
+            modalImage.src = productImage;
+            modalImage.alt = productName;
+            modalImage.style.display = 'block';
+            modalImagePlaceholder.style.display = 'none';
+        } else {
+            modalImage.style.display = 'none';
+            modalImagePlaceholder.style.display = 'flex';
+        }
+    }
     
     productModal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -665,21 +743,89 @@ window.updateCartQuantity = updateCartQuantity;
 window.openCartSidebar = openCartSidebar;
 window.closeCartSidebar = closeCartSidebar;
 
-// Initialize cart functionality
-document.addEventListener('DOMContentLoaded', () => {
-    updateCartCount();
-    renderCart();
+// Load products from API
+async function loadProducts() {
+    const productsGrid = document.getElementById('productsGrid');
+    if (!productsGrid) return;
     
-    // Initialize delivery calculation
-    setTimeout(() => {
-        if (userCity === 'Москва') {
-            getUserLocation();
-        } else {
-            calculateDeliveryPrices();
+    try {
+        const response = await fetch('/api/products.php');
+        if (!response.ok) {
+            throw new Error('Failed to load products');
         }
-    }, 500);
-    
-    // Product card click handlers
+        const products = await response.json();
+        
+        // Clear existing products
+        productsGrid.innerHTML = '';
+        
+        if (products.length === 0) {
+            productsGrid.innerHTML = '<p style="text-align: center; padding: 2rem; color: #DAA520;">Товары не найдены</p>';
+            return;
+        }
+        
+        // Render products
+        products.forEach(product => {
+            const priceNum = parseInt(product.price.replace(/[^\d]/g, '')) || 0;
+            const priceDisplay = product.price || '0 ₽';
+            
+            const productCard = document.createElement('article');
+            productCard.className = 'product-card';
+            productCard.setAttribute('data-product-id', product.id);
+            productCard.setAttribute('data-product-name', product.name);
+            productCard.setAttribute('data-product-price', priceNum);
+            productCard.setAttribute('data-product-description', product.description || '');
+            productCard.setAttribute('data-product-image', product.image || '');
+            productCard.setAttribute('itemscope', '');
+            productCard.setAttribute('itemtype', 'https://schema.org/Product');
+            
+            const imageHtml = product.image && product.image.trim() 
+                ? `<img src="${product.image}" alt="${product.name}" class="product-img">`
+                : '<div class="product-placeholder" aria-label="Изображение ' + product.name + '">🖼️</div>';
+            
+            productCard.innerHTML = `
+                <div class="product-image">
+                    ${imageHtml}
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name" itemprop="name">${escapeHtml(product.name)}</h3>
+                    <p class="product-description" itemprop="description">${escapeHtml(product.description || '')}</p>
+                    <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <meta itemprop="price" content="${priceNum}">
+                        <meta itemprop="priceCurrency" content="RUB">
+                        <meta itemprop="availability" content="https://schema.org/InStock">
+                        ${priceDisplay}
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn btn-product btn-view">Подробнее</button>
+                        <button class="btn btn-product btn-add-cart">В корзину</button>
+                    </div>
+                </div>
+            `;
+            
+            productsGrid.appendChild(productCard);
+        });
+        
+        // Attach event handlers to new product cards
+        attachProductCardHandlers();
+        
+    } catch (error) {
+        console.error('Error loading products:', error);
+        const productsGrid = document.getElementById('productsGrid');
+        if (productsGrid) {
+            productsGrid.innerHTML = '<p style="text-align: center; padding: 2rem; color: #DAA520;">Ошибка загрузки товаров</p>';
+        }
+    }
+}
+
+// Helper function to escape HTML
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+// Attach event handlers to product cards
+function attachProductCardHandlers() {
     const productCards = document.querySelectorAll('.product-card');
     productCards.forEach(card => {
         // View button
@@ -704,6 +850,24 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+}
+
+// Initialize cart functionality
+document.addEventListener('DOMContentLoaded', () => {
+    updateCartCount();
+    renderCart();
+    
+    // Load products from API
+    loadProducts();
+    
+    // Initialize delivery calculation
+    setTimeout(() => {
+        if (userCity === 'Москва') {
+            getUserLocation();
+        } else {
+            calculateDeliveryPrices();
+        }
+    }, 500);
     
     // Initialize product modal elements
     productModal = document.getElementById('productModal');

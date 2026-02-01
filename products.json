@@ -1,0 +1,149 @@
+[
+    {
+        "id": 3,
+        "name": "Памятные таблички",
+        "description": "Изготовление памятных и информационных табличек из бронзы, латуни и других металлов. Возможность нанесения гравировки, эмалирования и других видов обработки. Различные размеры и формы по вашему заказу.",
+        "price": "от 3 000 ₽",
+        "image": ""
+    },
+    {
+        "id": 4,
+        "name": "Каминные решетки",
+        "description": "Декоративные решетки для каминов из металла. Изготавливаются по индивидуальным размерам с учетом стиля интерьера. Прочные и долговечные конструкции с художественным оформлением.",
+        "price": "от 12 000 ₽",
+        "image": ""
+    },
+    {
+        "id": 5,
+        "name": "Сувенирная продукция",
+        "description": "Корпоративные сувениры и подарки из металла. Широкий ассортимент изделий для бизнес-подарков, наград и памятных сувениров. Возможность нанесения логотипов и персонализации.",
+        "price": "от 2 000 ₽",
+        "image": ""
+    },
+    {
+        "id": 6,
+        "name": "Интерьерные аксессуары",
+        "description": "Уникальные аксессуары для интерьера из металла. Подсвечники, вазы, статуэтки и другие декоративные элементы. Каждое изделие создается индивидуально с учетом ваших пожеланий и стиля интерьера.",
+        "price": "от 5 000 ₽",
+        "image": ""
+    },
+    {
+        "id": 7,
+        "name": "Брелок \"Черная метка\"",
+        "description": "Брелок \"Черная метка\" - уникальное изделие из бронзы. Качественное литье, детальная проработка.",
+        "price": "1 000 ₽",
+        "image": "https:\/\/sun9-72.userapi.com\/impg\/-d6XuQIkysAlXI5h7Wrg1b0ru5vwyTbr4wL69A\/QjwBxYLfhHM.jpg?size=0x0&quality=95&background=ffffff&crop=0,0.05,1,0.9&sign=389cf78c99cb3a9470d7d2b391c975fb&type=market_thumb"
+    },
+    {
+        "id": 8,
+        "name": "Кулон - подвеска \" Чужой\"",
+        "description": "Кулон - подвеска \" Чужой\" - художественное изделие из бронзы. Детальная проработка, качественное литье.",
+        "price": "1 800 ₽",
+        "image": "https:\/\/sun9-79.userapi.com\/impg\/dGfEd8cphb6up8wBR5trMbcZ5JEzQT7FM8xjkQ\/D4L-Oy-qgRA.jpg?size=0x0&quality=95&background=ffffff&crop=0,0.05,1,0.9&sign=b02f18b6d20f2c2c17daded591ebe652&type=market_thumb"
+    },
+    {
+        "id": 9,
+        "name": "Статуэтка \"Кот ученый\"",
+        "description": "Статуэтка \"Кот ученый\" - художественное литье из бронзы. Детальная проработка, качественное исполнение.",
+        "price": "от 7 600 ₽",
+        "image": "https:\/\/sun9-30.userapi.com\/impg\/VnrFj2lDjJ3dTO3-ZD_xjvRRXLla8wHOIDFWtQ\/Si1IZ12Bdb0.jpg?size=0x0&quality=95&background=ffffff&crop=0,0.05,1,0.9&sign=cefd5d2fa65974adc86222cc8ce06fc0&type=market_thumb"
+    },
+    {
+        "id": 10,
+        "name": "Брелок \" Кот ученый\"",
+        "description": "Брелок \" Кот ученый\" - изделие из бронзы с детальной проработкой.",
+        "price": "от 1 400 ₽",
+        "image": "https:\/\/sun9-60.userapi.com\/impg\/GFxh21GZJjFKoQyhxlnxTs8hdWbsEMVU7aXkdw\/HnanQYrtQ4A.jpg?size=0x0&quality=95&background=ffffff&crop=0,0.05,1,0.9&sign=8d7148f8cf745f5cfc18da56aa1a2fdc&type=market_thumb"
+    },
+    {
+        "id": 11,
+        "name": "Бусина \"Кот ученый\"",
+        "description": "Бусина \"Кот ученый\" - декоративное изделие из бронзы.",
+        "price": "от 1 200 ₽",
+        "image": "https:\/\/sun9-80.userapi.com\/impg\/ypLti-ME6aG9AirYNrVZFrqrHGx11vqPM8xyMg\/cMNsdUEQJIg.jpg?size=0x0&quality=95&background=ffffff&crop=0,0.05,1,0.9&sign=aa90d501f2b4a5f6f1bfa830f94e1a9e&type=market_thumb"
+    },
+    {
+        "id": 12,
+        "name": "Пряжка ременная \"Полемика\".",
+        "description": "Пряжка ременная \"Полемика\" - качественное изделие из бронзы для ремня.",
+        "price": "3 000 ₽",
+        "image": "https:\/\/sun9-85.userapi.com\/impg\/H2OpRASkOI45BiGZA2r48RiJMiivzBsCyf_DZg\/5VmIBtyqibM.jpg?size=0x0&quality=95&background=ffffff&crop=0,0.05,1,0.9&sign=f42aebda2dad870b9ef0df89b53389be&type=market_thumb"
+    },
+    {
+        "id": 13,
+        "name": "Пряжка ременная \" Ворон\"",
+        "description": "Пряжка ременная \" Ворон\" - художественное изделие из бронзы.",
+        "price": "5 700 ₽",
+        "image": "https:\/\/sun9-24.userapi.com\/impg\/jHDcyUO7YbLY3H3uBKJ9WYZWBXYJ_Jfqbqbm9Q\/FK6Vakcyo30.jpg?size=0x0&quality=95&background=ffffff&crop=0.011,0,0.977,1&sign=544119e18c834c776b1bc8dcfce8fe9b&type=market_thumb"
+    },
+    {
+        "id": 14,
+        "name": "Брелок - монета \" Золотой дублон\"",
+        "description": "Брелок - монета \" Золотой дублон\" - уникальное изделие из бронзы.",
+        "price": "800 ₽",
+        "image": "https:\/\/sun9-79.userapi.com\/impg\/PMLeJVqLGKcd3AEcf1fnhoE0DEalEnsW3hq9SA\/c1L5XUy5DNw.jpg?size=0x0&quality=95&background=ffffff&crop=0.083,0,0.833,1&sign=fe4a979459fd2a8d2d70765110cf449f&type=market_thumb"
+    },
+    {
+        "id": 15,
+        "name": "Пряжка \"Харлей Дэвидсон\"",
+        "description": "Пряжка \"Харлей Дэвидсон\" - качественное изделие из бронзы.",
+        "price": "3 200 ₽",
+        "image": "https:\/\/sun9-58.userapi.com\/impg\/UMi8zZ6Nip9E-b1ahtyfbKKv4CwiO-uBikXyvA\/M_rWYw_Zqew.jpg?size=0x0&quality=95&background=ffffff&crop=0,0.05,1,0.9&sign=9e426310402d7de7e8b0ff50331b9898&type=market_thumb"
+    },
+    {
+        "id": 16,
+        "name": "Пряжка \"Эдди\"",
+        "description": "Пряжка \"Эдди\" - художественное изделие из бронзы.",
+        "price": "2 800 ₽",
+        "image": "https:\/\/sun9-52.userapi.com\/impg\/ynpysJdPVH4uGlRu5uOZFyg0VQWUIjGBiortzw\/yUxV1oM_R50.jpg?size=0x0&quality=95&background=ffffff&crop=0,0.05,1,0.9&sign=5b702153df0b95e4a1352add70a4a6ef&type=market_thumb"
+    },
+    {
+        "id": 17,
+        "name": "Пряжка \"Витязь\"",
+        "description": "Пряжка \"Витязь\" - качественное изделие из бронзы.",
+        "price": "3 000 ₽",
+        "image": "https:\/\/sun9-43.userapi.com\/impg\/eRTQaxOiiUqAP-MePl1w-WL4GfnJ2c0NZYNIvA\/GhmKgo8NTv0.jpg?size=0x0&quality=95&background=ffffff&crop=0.029,0,0.941,1&sign=fd504eccbf81bfaeb869673ff240c97b&type=market_thumb"
+    },
+    {
+        "id": 18,
+        "name": "Пряжка \"Оззи\"",
+        "description": "Пряжка \"Оззи\" - художественное изделие из бронзы.",
+        "price": "3 500 ₽",
+        "image": "https:\/\/sun9-80.userapi.com\/impg\/Lhkzu4dMPtXeqjJa75LrcxOUcasevdr-BE9DmQ\/FP1hcn5XgMA.jpg?size=0x0&quality=95&background=ffffff&crop=0.005,0,0.991,1&sign=82890e54455be23ecb8edb083c96fc5c&type=market_thumb"
+    },
+    {
+        "id": 19,
+        "name": "Пряжка ременная \"Один в поле воин\"",
+        "description": "Пряжка ременная \"Один в поле воин\" - качественное изделие из бронзы.",
+        "price": "3 000 ₽",
+        "image": "https:\/\/sun9-14.userapi.com\/impg\/CQA7SE0JeOFwUf-7J8A0fBnOW6eovaz8SLUO9Q\/txa77s1Wx3c.jpg?size=0x0&quality=95&background=ffffff&crop=0,0.05,1,0.9&sign=7b514348191fa1758ceaae82e6e0bdd9&type=market_thumb"
+    },
+    {
+        "id": 20,
+        "name": "Крест",
+        "description": "Крест - художественное изделие из бронзы.",
+        "price": "1 500 ₽",
+        "image": "https:\/\/sun9-54.userapi.com\/impg\/9UsqnsVTyqdUPwWrtta0OZRBexpQGg4PiDYC7A\/-58GqP2M3so.jpg?size=0x0&quality=95&background=ffffff&crop=0,0.05,1,0.9&sign=e4fdbb18dfcd42597b6de491fe4168cb&type=market_thumb"
+    },
+    {
+        "id": 21,
+        "name": "Пряжка \"Полемика\"",
+        "description": "Пряжка \"Полемика\" - качественное изделие из бронзы.",
+        "price": "3 300 ₽",
+        "image": "https:\/\/sun9-66.userapi.com\/impg\/z98pAfSxoC6I-eCWFEYA_v9N1xejdu8PlSLkug\/hxBz1DyOKEY.jpg?size=0x0&quality=95&background=ffffff&crop=0,0.05,1,0.9&sign=957aff6d196ffcdee23350ef3ff91ef4&type=market_thumb"
+    },
+    {
+        "id": 22,
+        "name": "Значок Великие Луки",
+        "description": "Значок Великие Луки - сувенирное изделие из бронзы.",
+        "price": "800 ₽",
+        "image": "https:\/\/sun9-86.userapi.com\/impg\/XuNLQZ-za9T21ncAS5io7qKgax1VJ9XQnGddIw\/62c9dczC4N4.jpg?size=0x0&quality=95&background=ffffff&crop=0,0.1,1,0.799&sign=658a8dd46340383e06790d783126a554&type=market_thumb"
+    },
+    {
+        "id": 23,
+        "name": "Сувенир \"А. С. Пушкин\"",
+        "description": "Сувенир \"А. С. Пушкин\" - художественное изделие из бронзы.",
+        "price": "650 ₽",
+        "image": "https:\/\/sun9-73.userapi.com\/impg\/6pU2ZNhrEVMRKM5QH9sYtV86ANHMyP-aTBGQAQ\/4U6qUhOl1vs.jpg?size=0x0&quality=96&background=ffffff&crop=0.188,0,0.625,1&sign=25462d436e69d03fc101900be0d8fc38&type=market_thumb"
+    }
+]

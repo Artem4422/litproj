@@ -1,0 +1,9 @@
+# Защита админ-панели
+# Разрешаем доступ только к определенным файлам
+<FilesMatch "\.(php|css|js|png|jpg|jpeg|gif)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# Защита от просмотра директорий
+Options -Indexes

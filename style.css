@@ -1857,17 +1857,18 @@ section {
     }
     
     .contact-item h3 {
-        font-size: 1rem;
+        font-size: 1.1rem;
         color: var(--gold);
-        margin-bottom: 0.4rem;
+        margin-bottom: 0.5rem;
         font-weight: 700;
         margin-top: 0;
+        text-shadow: 0 1px 3px rgba(157, 139, 111, 0.3);
     }
     
     .contact-item p {
-        color: rgba(208, 208, 208, 0.95);
-        line-height: 1.5;
-        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.6;
+        font-size: 0.9rem;
         margin: 0;
         word-wrap: break-word;
         overflow-wrap: break-word;
@@ -1875,15 +1876,17 @@ section {
     }
     
     .contact-icon {
-        width: 32px;
-        height: 32px;
+        width: 40px;
+        height: 40px;
         flex-shrink: 0;
-        padding: 0.5rem;
-        background: rgba(157, 139, 111, 0.15);
-        border-radius: 8px;
-        border: 1px solid rgba(157, 139, 111, 0.3);
-        margin: 0 auto 0.5rem;
-        display: block;
+        padding: 0.6rem;
+        background: rgba(157, 139, 111, 0.25);
+        border-radius: 10px;
+        border: 2px solid rgba(157, 139, 111, 0.5);
+        margin: 0 auto 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         color: var(--gold);
         fill: currentColor;
     }
@@ -1892,6 +1895,8 @@ section {
         width: 100%;
         height: 100%;
         display: block;
+        color: var(--gold);
+        fill: var(--gold);
     }
     
     .footer-content {
@@ -2399,38 +2404,46 @@ section {
     }
     
     .contact-item h3 {
-        font-size: 1rem;
+        font-size: 1.1rem;
         margin-bottom: 0.5rem;
         margin-top: 0;
         word-wrap: break-word;
         overflow-wrap: break-word;
         max-width: 100%;
+        text-shadow: 0 1px 3px rgba(157, 139, 111, 0.3);
     }
     
     .contact-item p {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         line-height: 1.6;
         margin: 0;
         word-wrap: break-word;
         overflow-wrap: break-word;
         max-width: 100%;
+        color: rgba(255, 255, 255, 0.9);
     }
     
     .contact-icon {
-        width: 32px;
-        height: 32px;
-        padding: 0.5rem;
+        width: 40px;
+        height: 40px;
+        padding: 0.6rem;
         border-radius: 10px;
-        display: block;
-        margin: 0 auto 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 0.75rem;
+        background: rgba(157, 139, 111, 0.25);
+        border: 2px solid rgba(157, 139, 111, 0.5);
         color: var(--gold);
-        fill: currentColor;
+        fill: var(--gold);
     }
     
     .contact-icon svg {
         width: 100%;
         height: 100%;
         display: block;
+        color: var(--gold);
+        fill: var(--gold);
     }
     
     .cart-btn {
